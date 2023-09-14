@@ -142,7 +142,7 @@ void loop() {
       delay(1000);
       digitalWrite(LED1, LOW);
       Serial.println("OFF");
-      delay(1000); // для гит  хаба
+      delay(1000); // для гит хаба
       */
      delay(1000);
 }
