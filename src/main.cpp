@@ -100,6 +100,7 @@ void setup()
       Serial.print(i, DEC);
       Serial.print(" but could not detect address. Check power and cabling");
     }
+
   }
 
 }
@@ -141,7 +142,7 @@ void loop() {
       delay(1000);
       digitalWrite(LED1, LOW);
       Serial.println("OFF");
-      delay(1000);
+      delay(1000); // для гит хаба
       */
      delay(1000);
 }
