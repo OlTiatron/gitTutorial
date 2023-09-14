@@ -96,7 +96,7 @@ void setup()
       Serial.print(sensors.getResolution(tempDeviceAddress), DEC);
       Serial.println();
     } else {
-      Serial.print("Found ghost device at ");
+      Serial.print("Found gost device at ");
       Serial.print(i, DEC);
       Serial.print(" but could not detect address. Check power and cabling");
     }
