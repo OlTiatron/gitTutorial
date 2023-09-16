@@ -124,7 +124,7 @@ void loop() {
 
       // It responds almost immediately. Let's print out the data
       printTemperature(tempDeviceAddress); // Распечатаем температуру с датчика
-      if ( (sensors.getTempC(tempDeviceAddress)) > 27.0 )
+      if ( (sensors.getTempC(tempDeviceAddress)) > 27.5 )
       {
         /* code */
         digitalWrite(LED1,HIGH);
