@@ -130,6 +130,13 @@ void loop() {
         digitalWrite(LED1,HIGH);
         Serial.println("Rele ON");
       }
+      else 
+      {
+        /* code */
+        digitalWrite(LED1,LOW);
+        Serial.println("Rele OFF");
+      }
+      
       
     }
         //else ghost device! Check your power requirements and cabling
