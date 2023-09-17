@@ -1,21 +1,58 @@
 #include <Arduino.h>
+// #include <OneWire.h>
+// #include <DallasTemperature.h>
 #include <Ds18b20.h>
 
 //Распаянные светодиоды
 #define LED1 12
 #define LED2 13
+// #define TEMPERATURE_PRECISION 9 // Lower resolution
+// Настроим порт  ESP куда подключен DS18B20
+// #define ONER_WIRE_BUS 6
 
-
+// Создаем экземпляр класса от OneWire 
+ // OneWire oneWire(ONER_WIRE_BUS);
+//Подключим библиотеку в наш проект
+ // DallasTemperature sensors(&oneWire);
 //Создадим массивы для хранения адресов нескольких датчиков
+// DeviceAddress tempDeviceAddress, insideThermometer, outsideThermometer;
 
-
-
+// int numberOfDevices; //здесь будем хранить количество найденных устройств на шине
 // Переменная для хранения адресов найденных устройств
 // DeviceAddress tempDeviceAddress; // Мы будем использовать эту переменную для хранения адреса найденного устройства
 
+// function распечатаем адрес найденного устройства
+void printAddress(DeviceAddress deviceAddress)
+{
+  for (uint8_t i = 0; i < 8; i++)
+  {
+    if (deviceAddress[i] < 16) Serial.print("0");
+    Serial.print(deviceAddress[i], HEX);
+  }
+}
 
 
+// function to print the temperature for a device
+void printTemperature(DeviceAddress deviceAddress)
+{
+  // method 1 - slower
+  //Serial.print("Temp C: ");
+  //Serial.print(sensors.getTempC(deviceAddress));
+  //Serial.print(" Temp F: ");
+  //Serial.print(sensors.getTempF(deviceAddress)); // Makes a second call to getTempC and then converts to Fahrenheit
 
+  // method 2 - faster
+  float tempC = sensors.getTempC(deviceAddress);
+  if (tempC == DEVICE_DISCONNECTED_C)
+  {
+    Serial.println("Error: Could not read temperature data");
+    return;
+  }
+  Serial.print("Temp C: ");
+  Serial.print(tempC);
+  Serial.print(" Temp F: ");
+  Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
+}
 
 void setup() 
 {
@@ -89,7 +126,7 @@ void loop() {
 
       // It responds almost immediately. Let's print out the data
       printTemperature(tempDeviceAddress); // Распечатаем температуру с датчика
-      if ( (sensors.getTempC(tempDeviceAddress)) > 27.5 )
+      if ( (sensors.getTempC(tempDeviceAddress)) > 27.0 )
       {
         /* code */
         digitalWrite(LED1,HIGH);

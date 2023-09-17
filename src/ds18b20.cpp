@@ -1,9 +1,15 @@
-#include <Ds18b20.h>
+
+// #include <Ds18b20.h>
+// #include <Arduino.h>
 
 // Создаем экземпляр класса от OneWire 
-OneWire oneWire(ONER_WIRE_BUS);
+// OneWire oneWire(ONER_WIRE_BUS);
 //Подключим библиотеку в наш проект
-DallasTemperature sensors(&oneWire);
+// DallasTemperature sensors(&oneWire);
+
+/*
+
+  // sensors.begin();
 
 // function распечатаем адрес найденного устройства
 void printAddress(DeviceAddress deviceAddress)
@@ -36,3 +42,5 @@ void printTemperature(DeviceAddress deviceAddress)
   Serial.print(" Temp F: ");
   Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
 }
+
+*/
