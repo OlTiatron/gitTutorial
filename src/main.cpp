@@ -64,7 +64,7 @@ void setup()
   // Погнали
   delay(1000);
   // Запустим библиотеку DS18
-  sensors.begin();
+  // sensors.begin();
   // Ищем количество датчиков на линии
   numberOfDevices = sensors.getDeviceCount();
   Serial.print("Found ");

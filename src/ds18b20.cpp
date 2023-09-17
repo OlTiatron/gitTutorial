@@ -1,7 +1,10 @@
 
-// #include <Ds18b20.h>
+ #include <Ds18b20.h>
 // #include <Arduino.h>
 
+void initDS18b20(){
+sensors.begin();
+}
 // Создаем экземпляр класса от OneWire 
 // OneWire oneWire(ONER_WIRE_BUS);
 //Подключим библиотеку в наш проект
