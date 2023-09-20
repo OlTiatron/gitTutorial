@@ -22,6 +22,7 @@
 // DeviceAddress tempDeviceAddress; // Мы будем использовать эту переменную для хранения адреса найденного устройства
 
 // function распечатаем адрес найденного устройства
+
 void printAddress(DeviceAddress deviceAddress)
 {
   for (uint8_t i = 0; i < 8; i++)

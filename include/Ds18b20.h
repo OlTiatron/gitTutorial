@@ -23,7 +23,7 @@ DeviceAddress tempDeviceAddress, insideThermometer, outsideThermometer;
 int numberOfDevices; //здесь будем хранить количество найденных устройств на шине
 
 // function печатает адрес найденного устройства
-// void printAddress(DeviceAddress deviceAddress);
+ // void printAddress(DeviceAddress deviceAddress);
 /*
 // function to print считанную температуру
 void printTemperature(DeviceAddress deviceAddress);
