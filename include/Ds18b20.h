@@ -1,5 +1,6 @@
-#ifndef Ds18b20_H
-#define DS18b20_H
+#ifndef __Ds18b20_H
+#define __DS18b20_H
+
 #include <Arduino.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
