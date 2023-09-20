@@ -1,5 +1,5 @@
 
- #include <Ds18b20.h>
+ // #include <Ds18b20.h>
 // #include <Arduino.h>
 
 // Создаем экземпляр класса от OneWire 
@@ -12,6 +12,7 @@
   // sensors.begin();
 
 // function распечатаем адрес найденного устройства
+/*
 void printAddress(DeviceAddress deviceAddress)
 {
   for (uint8_t i = 0; i < 8; i++)
@@ -20,7 +21,7 @@ void printAddress(DeviceAddress deviceAddress)
     Serial.print(deviceAddress[i], HEX);
   }
 }
-/*
+
 // function to print the temperature for a device
 void printTemperature(DeviceAddress deviceAddress)
 {
