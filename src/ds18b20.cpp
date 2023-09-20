@@ -1,5 +1,5 @@
 
-// #include <Ds18b20.h>
+ #include <Ds18b20.h>
 // #include <Arduino.h>
 
 // Создаем экземпляр класса от OneWire 
@@ -7,7 +7,7 @@
 //Подключим библиотеку в наш проект
 // DallasTemperature sensors(&oneWire);
 
-/*
+
 
   // sensors.begin();
 
@@ -20,7 +20,7 @@ void printAddress(DeviceAddress deviceAddress)
     Serial.print(deviceAddress[i], HEX);
   }
 }
-
+/*
 // function to print the temperature for a device
 void printTemperature(DeviceAddress deviceAddress)
 {
