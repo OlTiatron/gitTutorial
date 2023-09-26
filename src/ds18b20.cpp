@@ -1,15 +1,19 @@
-
+#include <OneWire.h>
+#include <DallasTemperature.h>
  #include <Ds18b20.h>
 // #include <Arduino.h>
 
+#define TEMPERATURE_PRECISION 9 // Lower resolution
+#define ONER_WIRE_BUS 6 // Настроим порт  ESP куда подключен DS18B20
+
+// Создаем экземпляр класса от OneWire 
+OneWire oneWire(ONER_WIRE_BUS);
+
+//Подключим библиотеку в наш проект
+DallasTemperature sensors(&oneWire);
 void initDS18b20(){
 sensors.begin();
 }
-// Создаем экземпляр класса от OneWire 
-// OneWire oneWire(ONER_WIRE_BUS);
-//Подключим библиотеку в наш проект
-// DallasTemperature sensors(&oneWire);
-
 /*
 
   // sensors.begin();
