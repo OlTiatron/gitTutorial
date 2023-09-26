@@ -5,17 +5,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-
-
-
-
-
-// Запустим библиотеку DS18
  
-
-DeviceAddress tempDeviceAddress, insideThermometer, outsideThermometer;
-
-int numberOfDevices; //здесь будем хранить количество найденных устройств на шине
 
 void initDS18b20();
 /*

@@ -6,6 +6,11 @@
 #define TEMPERATURE_PRECISION 9 // Lower resolution
 #define ONER_WIRE_BUS 6 // Настроим порт  ESP куда подключен DS18B20
 
+//Создадим массивы для хранения адресов нескольких датчиков
+DeviceAddress tempDeviceAddress, insideThermometer, outsideThermometer;
+
+int numberOfDevices; //здесь будем хранить количество найденных устройств на шине
+
 // Создаем экземпляр класса от OneWire 
 OneWire oneWire(ONER_WIRE_BUS);
 

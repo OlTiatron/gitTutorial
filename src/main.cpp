@@ -9,11 +9,7 @@
 // Настроим порт  ESP куда подключен DS18B20
 // #define ONER_WIRE_BUS 6
 
-// Создаем экземпляр класса от OneWire 
- // OneWire oneWire(ONER_WIRE_BUS);
-//Подключим библиотеку в наш проект
- // DallasTemperature sensors(&oneWire);
-//Создадим массивы для хранения адресов нескольких датчиков
+
 // DeviceAddress tempDeviceAddress, insideThermometer, outsideThermometer;
 
 // int numberOfDevices; //здесь будем хранить количество найденных устройств на шине
