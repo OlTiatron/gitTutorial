@@ -3,20 +3,11 @@
 
 // #include <Arduino.h>
 
-
- 
-
+// инициализация датчиков
 void initDS18b20();
-/*
-// function печатает адрес найденного устройства
-void printAddress(DeviceAddress deviceAddress);
+// считывание данных с датчиков
+float Read_Temp_Ds18b20();
 
-// function to print считанную температуру
-void printTemperature(DeviceAddress deviceAddress);
-
- // Ищет количество датчиков на линии
-  numberOfDevices = sensors.getDeviceCount();
-*/
 
   
 # endif

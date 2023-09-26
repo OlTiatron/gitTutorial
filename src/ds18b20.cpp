@@ -16,12 +16,7 @@ OneWire oneWire(ONER_WIRE_BUS);
 
 //Подключим библиотеку в наш проект
 DallasTemperature sensors(&oneWire);
-void initDS18b20(){
-sensors.begin();
-}
-/*
 
-  // sensors.begin();
 
 // function распечатаем адрес найденного устройства
 void printAddress(DeviceAddress deviceAddress)
@@ -55,4 +50,68 @@ void printTemperature(DeviceAddress deviceAddress)
   Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
 }
 
-*/
+
+void initDS18b20()
+{
+    sensors.begin();
+      // Ищем количество датчиков на линии
+     numberOfDevices = sensors.getDeviceCount();
+    Serial.print("Found ");
+    Serial.print(numberOfDevices, DEC);
+    Serial.println(" datchik.");
+      // выясним как запитан датчик
+    Serial.print("Parasite power is: ");
+    if (sensors.isParasitePowerMode()) Serial.println("ON");
+    else Serial.println("OFF");
+
+        // распечатаем адреса всех найденных устройств
+        for (int i = 0; i < numberOfDevices; i++)
+        {
+           // Search the wire for address
+            if (sensors.getAddress(tempDeviceAddress, i))
+            {
+            Serial.print("Found device ");
+            Serial.print(i, DEC);
+            Serial.print(" with address: ");
+            printAddress(tempDeviceAddress);
+            Serial.println();
+            Serial.print("Setting tochnost preobrazovania ");
+             Serial.println(TEMPERATURE_PRECISION, DEC);
+            // установите разрешение равным биту TEMPERATURE_PRECISION 
+            // (каждое устройство Dallas/Maxim поддерживает несколько различных разрешений)
+            sensors.setResolution(tempDeviceAddress, TEMPERATURE_PRECISION);
+            Serial.print("Tochnost preobrazovania sostavliaet: ");
+             Serial.print(sensors.getResolution(tempDeviceAddress), DEC);
+            Serial.println();
+            } else {
+            Serial.print("Found gost device at ");
+            Serial.print(i, DEC);
+            Serial.print(" but could not detect address. Check power and cabling");
+             }
+
+        }
+
+
+}
+  float Read_Temp_Ds18b20()
+  {
+    sensors.requestTemperatures(); // команда считать данные
+      // перебрать количество дачиков, распечатайте данные о температуре
+    for (int i = 0; i < numberOfDevices; i++)
+    {
+    // Search the wire for address
+      if (sensors.getAddress(tempDeviceAddress, i))
+      {
+      // Output the device ID
+      Serial.print("Temperature for device: ");
+      Serial.println(i, DEC);
+
+      // It responds almost immediately. Let's print out the data
+      printTemperature(tempDeviceAddress); // Распечатаем температуру с датчика
+      }
+
+    }
+    return  sensors.getTempC(tempDeviceAddress);
+  }
+
+
