@@ -2,8 +2,7 @@
 #define DS18b20_H
 
 // #include <Arduino.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
+
 
  
 
