@@ -9,5 +9,4 @@ void initDS18b20();
 float Read_Temp_Ds18b20();
 
 
-  
 # endif
