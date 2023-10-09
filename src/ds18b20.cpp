@@ -1,6 +1,7 @@
 
- // #include <Ds18b20.h>
-// #include <Arduino.h>
+  // #include <Arduino.h>
+  // #include <Ds18b20.h>
+// 
 
 // Создаем экземпляр класса от OneWire 
 // OneWire oneWire(ONER_WIRE_BUS);
@@ -15,13 +16,14 @@
 /*
 void printAddress(DeviceAddress deviceAddress)
 {
+  
   for (uint8_t i = 0; i < 8; i++)
   {
     if (deviceAddress[i] < 16) Serial.print("0");
     Serial.print(deviceAddress[i], HEX);
   }
 }
-
+/*
 // function to print the temperature for a device
 void printTemperature(DeviceAddress deviceAddress)
 {
